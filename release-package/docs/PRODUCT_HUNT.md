@@ -69,6 +69,6 @@ Would love your feedback. What's missing? What would make you actually use this?
 
 ## 发布时间建议
 
-- 旧金山时间 00:01 AM（北京时间下午 3:01）
+- 纽约时间 9:00-10:00 AM（旧金山时间 6:00-7:00 AM）
 - 周二到周四效果最好
-- 发布后 2 小时内是最关键的排名窗口
+- 发布后 2 小时内是最关键的排名窗口，找朋友前 2 小时帮忙 upvote
