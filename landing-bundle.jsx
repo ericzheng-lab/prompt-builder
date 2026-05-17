@@ -138,6 +138,7 @@ function HeroNav({ accent }) {
         <a href="#categories" className="hero-nav-text" style={{ color: 'var(--muted)' }}>Categories</a>
         <a href="#anatomy" className="hero-nav-text" style={{ color: 'var(--muted)' }}>How it works</a>
         <a href="#models" className="hero-nav-text" style={{ color: 'var(--muted)' }}>Models</a>
+        <a href="https://ai.drsfilms.com" className="hero-nav-text" style={{ color: 'var(--muted)' }}>DRS Films</a>
         <a href="prompt-builder" style={{
           padding: '7px 14px', borderRadius: 8, border: `1px solid ${accent}`, color: accent, fontWeight: 500,
         }}>Open the tool →</a>
@@ -1061,6 +1062,13 @@ function AuthorStrip({ accent }) {
             color: 'var(--dim)', marginTop: 8,
           }}>
             Sundance Nominee · Berlinale Panorama · Gold House · EMBA Quantic
+          </div>
+          <div style={{
+            fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '0.12em',
+            color: 'var(--dim)', marginTop: 6, display: 'flex', gap: 16,
+          }}>
+            <a href="https://ai.drsfilms.com" style={{ color: 'var(--accent)' }}>AI Portfolio →</a>
+            <a href="https://www.drsfilms.com" style={{ color: 'var(--dim)' }}>Film Portfolio →</a>
           </div>
         </div>
         <a href="prompt-builder" style={{
