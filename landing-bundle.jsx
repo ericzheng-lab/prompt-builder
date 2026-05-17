@@ -134,10 +134,10 @@ function HeroNav({ accent }) {
         <span style={{ fontWeight: 500, letterSpacing: '-0.01em' }}>Prompt Builder</span>
         <span style={{ color: 'var(--dim)', fontSize: 12, marginLeft: 4 }}>Film & AI Image</span>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontSize: 13 }}>
-        <a href="#categories" style={{ color: 'var(--muted)' }}>Categories</a>
-        <a href="#anatomy" style={{ color: 'var(--muted)' }}>How it works</a>
-        <a href="#models" style={{ color: 'var(--muted)' }}>Models</a>
+      <div className="hero-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 24, fontSize: 13 }}>
+        <a href="#categories" className="hero-nav-text" style={{ color: 'var(--muted)' }}>Categories</a>
+        <a href="#anatomy" className="hero-nav-text" style={{ color: 'var(--muted)' }}>How it works</a>
+        <a href="#models" className="hero-nav-text" style={{ color: 'var(--muted)' }}>Models</a>
         <a href="prompt-builder.html" style={{
           padding: '7px 14px', borderRadius: 8, border: `1px solid ${accent}`, color: accent, fontWeight: 500,
         }}>Open the tool →</a>
@@ -267,7 +267,7 @@ function PromptPreviewCard({ accent }) {
     { txt: 'volumetric smoke, film grain', mono: true },
   ];
   return (
-    <div style={{
+    <div className="prompt-preview-card" style={{
       position: 'absolute', left: '-40px', bottom: '36px', zIndex: 2,
       width: 'min(460px, 86%)',
       background: 'rgba(255,255,255,0.78)',
@@ -361,6 +361,7 @@ function Hero({ accent, rotateRole }) {
       <div style={{ padding: '0 56px', position: 'relative', zIndex: 2 }} className="hero-left">
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 4px 4px 6px',
+          flexWrap: 'wrap',
           background: 'rgba(255,255,255,0.55)', border: '1px solid var(--border)',
           borderRadius: 999, fontSize: 11, color: 'var(--muted)',
           fontFamily: 'var(--mono)', letterSpacing: '0.04em',
@@ -418,6 +419,7 @@ function Hero({ accent, rotateRole }) {
 
         <div style={{
           display: 'flex', gap: 22, fontFamily: 'var(--mono)', fontSize: 11,
+          flexWrap: 'wrap',
           color: 'var(--dim)', letterSpacing: '0.08em', textTransform: 'uppercase',
         }}>
           <span><span style={{ color: accent, fontWeight: 500 }}>100+</span> Ready-made presets</span>
@@ -444,11 +446,6 @@ function Hero({ accent, rotateRole }) {
         @keyframes pp-pulse {
           0%, 100% { opacity: 0.4; transform: scale(0.85); }
           50%      { opacity: 1;   transform: scale(1.1); }
-        }
-        @media (max-width: 980px) {
-          .hero-shell { grid-template-columns: 1fr !important; gap: 0 !important; }
-          .hero-left  { padding: 0 24px !important; }
-          .hero-right { height: 70vh !important; min-height: 480px !important; margin: 24px 0 0 !important; }
         }
       `}</style>
     </section>
@@ -518,9 +515,9 @@ function ShowcaseSection({ accent }) {
         accent={accent}
       />
       {/* Stat bar */}
-      <div style={{
+      <div className="stat-bar" style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 0,
-        marginBottom: 48, padding: '20px 0',
+        marginBottom: 48, padding: '20px 0', flexWrap: 'wrap',
         borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)',
       }}>
         {[
@@ -550,10 +547,6 @@ function ShowcaseSection({ accent }) {
         .rotator-slide.active { opacity: 1; transform: scale(1); }
         .rotator-slide.inactive { opacity: 0; transform: scale(0.98); pointer-events: none; }
         .rotator-slide img { width: 100%; display: block; }
-        @media (max-width: 720px) {
-          .stat-bar { gap: 16px !important; }
-          .stat-bar > div > div:first-child { font-size: 42px !important; }
-        }
       `}</style>
     </section>
   );
@@ -655,11 +648,6 @@ function AudienceProofSection({ accent }) {
           />
         </div>
       </div>
-      <style>{`
-        @media (max-width: 860px) {
-          .audience-proof-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }
@@ -1043,7 +1031,7 @@ function AuthorStrip({ accent }) {
         padding: '34px 40px', display: 'grid',
         gridTemplateColumns: '88px 1fr auto', gap: 28, alignItems: 'center',
       }} className="author-strip">
-        <div style={{
+        <div className="author-avatar" style={{
           width: 88, height: 88, borderRadius: '50%',
           background: 'linear-gradient(135deg, #2a2438 0%, #5a4a6a 50%, #8a6aaa 100%)',
           display: 'grid', placeItems: 'center',
@@ -1074,12 +1062,6 @@ function AuthorStrip({ accent }) {
           whiteSpace: 'nowrap',
         }}>Try the tool →</a>
       </div>
-      <style>{`
-        @media (max-width: 720px) {
-          .author-strip { grid-template-columns: 64px 1fr !important; gap: 18px !important; padding: 24px !important; }
-          .author-strip > a { grid-column: 1 / -1 !important; justify-self: start !important; }
-        }
-      `}</style>
     </section>
   );
 }
@@ -1090,7 +1072,7 @@ function AuthorStrip({ accent }) {
 function CtaSection({ accent }) {
   return (
     <section style={{ padding: '60px 32px 100px', textAlign: 'center' }}>
-      <div style={{
+      <div className="cta-card" style={{
         maxWidth: 720, margin: '0 auto',
         background: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(18px)',
         border: '1px solid var(--border)', borderRadius: 18,
@@ -1226,6 +1208,57 @@ function App() {
         <TweakToggle label="Show Author strip" value={t.showAuthor}
           onChange={(v) => setTweak('showAuthor', v)} />
       </TweaksPanel>
+
+      {/* ── Mobile responsive styles ── */}
+      <style>{`
+        /* 980px — tablet portrait (existing, kept) */
+        @media (max-width: 980px) {
+          .hero-shell { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .hero-left  { padding: 0 24px !important; }
+          .hero-right { height: 70vh !important; min-height: 480px !important; margin: 24px 0 0 !important; }
+        }
+
+        /* 768px — large phone / small tablet */
+        @media (max-width: 768px) {
+          /* Nav: hide text links, keep CTA */
+          .hero-nav-text { display: none !important; }
+          .hero-nav-links { gap: 12px !important; }
+          nav { padding: 16px 16px !important; }
+
+          /* Anatomy: single column */
+          .anatomy-grid { grid-template-columns: 1fr !important; }
+
+          /* Stat bar: wrap + smaller numbers */
+          .stat-bar { flex-wrap: wrap !important; gap: 16px !important; }
+          .stat-bar > div > div:first-child { font-size: 48px !important; }
+          .stat-bar > div { margin: 8px 16px !important; }
+
+          /* Prompt preview card: fix offset */
+          .prompt-preview-card { left: 16px !important; bottom: 16px !important; }
+
+          /* Author avatar: fix size */
+          .author-avatar { width: 64px !important; height: 64px !important; }
+
+          /* Audience proof grid */
+          .audience-proof-grid { grid-template-columns: 1fr !important; }
+        }
+
+        /* 480px — small phone */
+        @media (max-width: 480px) {
+          /* Stat bar: even smaller */
+          .stat-bar > div > div:first-child { font-size: 36px !important; }
+
+          /* CtaSection: reduce padding */
+          .cta-card { padding: 32px 20px !important; }
+
+          /* Global section padding reduction */
+          section { padding-left: 16px !important; padding-right: 16px !important; }
+
+          /* Author strip */
+          .author-strip { grid-template-columns: 64px 1fr !important; gap: 18px !important; padding: 20px !important; }
+          .author-strip > a { grid-column: 1 / -1 !important; justify-self: start !important; }
+        }
+      `}</style>
     </div>
   );
 }
