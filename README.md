@@ -1,5 +1,10 @@
 # Prompt Builder — Prompt in Shot Language
 
+[![GitHub stars](https://img.shields.io/github/stars/ericzheng-lab/prompt-builder?style=social)](https://github.com/ericzheng-lab/prompt-builder/stargazers)
+[![License](https://img.shields.io/badge/license-UNLICENSED-lightgrey)](#)
+[![PWA](https://img.shields.io/badge/PWA-installable-8a6aaa)](#)
+[![No backend](https://img.shields.io/badge/backend-none-brightgreen)](#)
+
 > A production-minded prompt builder for AI image generation. Pick what you want to make, choose real film/visual language, and copy a model-ready prompt for Midjourney, Flux, Nano Banana, or GPT Image.
 
 ![Prompt Builder landing page](release-package/web-shots/landing-homepage.png)
@@ -102,6 +107,8 @@ Prompt Builder is not just a preset pack. It is a small product thesis:
 The goal is simple: help more people skip the prompt-writing headache and get straight to creating.
 
 ## Try It
+
+> **If this saves you time, a star goes a long way.** It helps other creators find the tool and keeps the project moving.
 
 - Open `index.html` for the landing page.
 - Open `prompt-builder.html` for the tool.
