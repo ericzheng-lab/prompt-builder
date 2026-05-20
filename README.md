@@ -57,7 +57,7 @@ Prompt Builder closes that gap. It translates film and visual-production languag
 
 ## What Makes It Different
 
-- **Built around real production vocabulary**: shot size, camera angle, lens, lighting, mood, style, aspect ratio, key art, panoramas, turnarounds, storyboards.
+- **Built around real production vocabulary**: shot size, camera angle, lens, lighting, mood, style, aspect ratio, key art, panoramas, character sheets, storyboards.
 - **Model-aware output**: Midjourney gets `/imagine` syntax, Flux gets natural language, Nano Banana gets conversational direction, GPT Image gets structured JSON.
 - **Use fields directly**: no LLM required. Fields, chips, and model params update the preview live.
 - **Optional AI enhancement**: add an API key only when you want an LLM to expand a structured idea.
@@ -69,7 +69,7 @@ Prompt Builder closes that gap. It translates film and visual-production languag
 
 ### Pick a workflow
 
-Film and visual categories are organized by intent: mood board, style frame, character turnaround, panorama, scene concept, storyboard, key art, product visual, infographic, UI mockup, and more.
+Film and visual categories are organized by intent: mood board, style frame, character sheet, panorama, scene concept, storyboard, key art, product visual, infographic, UI mockup, and more.
 
 ![Creative range](release-package/PICS/showcase-creative-range-what-can-you-build.jpg)
 

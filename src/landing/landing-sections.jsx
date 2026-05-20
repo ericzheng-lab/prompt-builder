@@ -144,7 +144,7 @@ function CategoriesSection({ accent }) {
       <SectionLabel
         kicker="What you can build"
         title="A preset for every stage of pre-production"
-        sub="Mood boards, style frames, character turnarounds, panoramas, key art — every category is a different creative workflow."
+        sub="Mood boards, style frames, character sheets, panoramas, key art — every category is a different creative workflow."
         accent={accent}
       />
       <div style={{
