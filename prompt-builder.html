@@ -2551,6 +2551,26 @@ function startLayer2(brief){
         el.value=val;
         el.dispatchEvent(new Event("input",{bubbles:true}));
       }
+      // Fix: prefill + highlight LLM chip fields (previously skipped, which wiped AI-filled values on Generate)
+      const chipsContainer=document.getElementById("llm-chips-"+fid);
+      if(chipsContainer){
+        const values=val.split(",").map(v=>v.trim().toLowerCase());
+        chipsContainer.querySelectorAll(".llm-chip").forEach(chip=>{
+          const chipVal=chip.dataset.value;
+          if(chipVal&&values.includes(chipVal.toLowerCase())){chip.classList.add("active");}
+        });
+        const presetOpts=(preset.fieldOptions&&preset.fieldOptions[fid])||[];
+        const customValues=val.split(",").map(v=>v.trim()).filter(v=>v&&!presetOpts.some(o=>o.toLowerCase()===v.toLowerCase()));
+        if(customValues.length){
+          const customWrap=document.getElementById("llm-custom-"+fid);
+          if(customWrap){
+            customWrap.style.display="";
+            const customInp=customWrap.querySelector("input");
+            if(customInp)customInp.value=customValues.join(", ");
+          }
+        }
+        llmFieldValues[fid]=getLLMChipValues(fid);
+      }
     });
     renderAgentMessage({role:"agent",type:"text",text:`Routed to ${preset.name}. Prompt assembled. You can refine by describing changes.`});
     const curPrompt=getFullPrompt();
