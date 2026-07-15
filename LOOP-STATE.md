@@ -3,8 +3,8 @@
 **Mode:** LOOP GOAL  
 **Started:** 2026-07-15  
 **Finished:** 2026-07-15  
-**Source:** 执行文档 v1 §7 Sprint A (blueprint attachment unavailable; DoD from §7)  
-**Repo:** ericzheng-lab/prompt-builder → dual-sync ai-drsfilms-portfolio/public/prompt-builder/
+**Source:** 执行文档 v1 §7 Sprint A (attachment 401; DoD from §7)  
+**Result:** **ALL_DONE**
 
 ## DoD
 
@@ -18,18 +18,23 @@
 - [x] A8 L1: tests/build-model-rules.test.js — PASS
 - [x] A9 Full-file grep: zero V8.2
 - [x] A10 Zero npm deps; no keys in code
-- [ ] A11 Dual-repo sync (in progress)
-- [ ] A12 Live URL verify
+- [x] A11 Dual-repo sync
+- [x] A12 Live URL verify (277908 bytes, pb-sprint-a marker present)
 
-## Loop log
+## Commits
 
-| # | Item | Status | Note |
-|---|------|--------|------|
-| 0 | bootstrap | done | base 5b8f942 HTML |
-| 1 | A1–A6 code | done | single transform pass |
-| 2 | L0/L1 | done | node --check + unit tests |
-| 3 | dual commit | in_progress | |
+| Repo | SHA | Notes |
+|------|-----|-------|
+| ericzheng-lab/prompt-builder | `7dd54cfb4f5649b3e9a093daf1c3bcc8f62a5efb` | html + LOOP-STATE + tests |
+| ericzheng-lab/ai-drsfilms-portfolio | `eb56a90df2b997a2974db446a3c48408b7e72c3a` | public/prompt-builder/prompt-builder.html |
+
+## Live
+
+- URL: https://ai.drsfilms.com/prompt-builder/prompt-builder
+- Demo: https://ai.drsfilms.com/prompt-builder/prompt-builder?mock=1
+- Marker: `<!-- pb-sprint-a: MODEL_CARDS V8.1 mock=1 2026-07-15 -->`
+- Bytes: 277908 (under 320KB budget)
 
 ## Status
 
-**IN_PROGRESS** — shipping dual-repo + live verify
+**ALL_DONE**
