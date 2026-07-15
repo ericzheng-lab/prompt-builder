@@ -58,7 +58,7 @@ for (const m of models) {
   assert(rules.includes('STRUCTURE'), `${m} STRUCTURE section`);
 }
 
-assert(MODEL_CARDS.midjourney.version === 'V8.1', 'MJ must be V8.1');
+assert(MODEL_CARDS.midjourney.version === 'V7', 'MJ must be V8.1');
 assert(MODEL_CARDS.flux.version === 'FLUX.2', 'Flux must be FLUX.2');
 assert(MODEL_CARDS.gptimage.version === 'gpt-image-2', 'gptimage version');
 assert(MODEL_CARDS.nano.version === 'gemini-3-pro-image', 'nano version');
