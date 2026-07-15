@@ -14,7 +14,7 @@ assert(html.includes('escAttr(it.id)'), 'data-id uses escAttr');
 assert(html.includes('safeId'), 'import id sanitize');
 assert(html.includes('pb-history'), 'history key kept');
 assert(html.includes('function pushHistory()'), 'pushHistory kept');
-assert(html.includes('pb-sprint-c'), 'marker');
+assert(html.includes('pb-sprint-d')||html.includes('pb-sprint-c'), 'marker');
 assert(html.includes('MODEL_CARDS'), 'MODEL_CARDS');
 assert(html.includes('version:"V8.1"'), 'V8.1');
 assert(!/v8\.2/i.test(html), 'no V8.2');
