@@ -87,7 +87,7 @@ assert(html.includes('pb-conversations'), 'persistence key');
 assert(html.includes('pickAgentQuickReply'), 'qr');
 assert(html.includes('refineAgentPrompt'), 'refine');
 assert(html.includes('formatAgentError'), 'err ux');
-assert(html.includes('pb-sprint-c') || html.includes('pb-sprint-b'), 'sprint marker');
+assert(html.includes('pb-sprint-e')||html.includes('pb-sprint-d') || html.includes('pb-sprint-c') || html.includes('pb-sprint-b'), 'sprint marker');
 assert(/Act by default/i.test(html), 'act-by-default prompt');
 assert(html.includes('newAgentChat'), 'new chat');
 assert(!html.includes('LLM_SYSTEM_PROMPTS'), 'no old prompts');

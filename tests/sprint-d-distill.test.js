@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const html = fs.readFileSync(path.join(__dirname, '..', 'prompt-builder.html'), 'utf8');
 function assert(c, m) { if (!c) { console.error('FAIL', m); process.exit(1); } }
-assert(html.includes('pb-sprint-d'), 'marker');
+assert(html.includes('pb-sprint-e')||html.includes('pb-sprint-d'), 'marker');
 assert(html.includes('Omni Reference') || html.includes('--oref'), 'MJ oref');
 assert(html.includes('No negative prompts'), 'flux no neg');
 assert(html.includes('layout.sections'), 'gptimage');
