@@ -1,0 +1,74 @@
+/* ============================================================
+   prompt-builder · design tokens — v1(过渡合同)
+   合同正本见 DESIGN.md。
+   本文件三段:LOCKED(铁律,永远成立)/ CURRENT(现状转录=迁移
+   基线,≠目标,禁止在新代码延续)/ TBD(方向定稿后回填)。
+   注:应用为单文件内联 CSS;本文件是规范正本,迁移时以此为准
+   同步回 prompt-builder.html 的 :root。
+   ============================================================ */
+
+:root {
+  /* ---- LOCKED · 不变量铁律 ---- */
+  --pb-mono-size-min: 13px;      /* prompt/代码文本字号硬下限 */
+  --pb-contrast-body: 4.5;       /* 正文最低对比(比值) */
+  --pb-contrast-prompt: 7;       /* prompt 输出区最低对比(比值) */
+  --pb-font-budget: 4;           /* 全站字体总数上限 */
+  --pb-file-budget: 360KB;       /* 单文件体积红线(工程既有) */
+  --pb-focus-ring: 2px solid;    /* 焦点态可见 */
+  /* 动效只用 opacity/transform;prefers-reduced-motion 全局尊重 */
+
+  /* ---- TBD · 目标语言(P6-B 美指 3-4 方向 → Eric 挑定后回填) ---- */
+  /* --pb-bg:        <方向定稿> */
+  /* --pb-ink:       <方向定稿> */
+  /* --pb-accent:    <方向定稿:全站唯一品牌强调色> */
+  /* --pb-font-display / --pb-font-ui / --pb-font-mono: <方向定稿> */
+  /* --pb-radius:    <方向定稿(上限随方向收紧)> */
+}
+
+/* ============================================================
+   CURRENT · 现状转录(2026-07-18 实测自 main)
+   仅作迁移对照。判定:待迁移语言,新代码/新物料禁止引用。
+   反-slop 命中:紫强调 / 三色渐变底 / 玻璃拟态(app 14 处
+   backdrop-filter)/ 14px 大圆角 / JetBrains Mono / ≥5 彩色并存。
+   ============================================================ */
+:root {
+  /* 底与玻璃(命中:渐变底、glassmorphism) */
+  --legacy-bg: #ede6f2;
+  --legacy-bg-grad: linear-gradient(160deg, #f0e6f6 0%, #e6eef6 40%, #e6f6f0 100%);
+  --legacy-glass: rgba(255, 255, 255, 0.48);
+  --legacy-glass-2: rgba(255, 255, 255, 0.62);
+  --legacy-bg2: rgba(255, 255, 255, 0.45);
+  --legacy-bg3: rgba(255, 255, 255, 0.55);
+
+  /* 文字 */
+  --legacy-text: #2a2438;
+  --legacy-text-2: #3d3450;
+  --legacy-muted: #7a6a9a;
+  --legacy-dim: #9988aa;
+
+  /* 彩色(命中:紫系强调、多强调并存) */
+  --legacy-accent: #8a6aaa;
+  --legacy-accent-2: #a080c0;
+  --legacy-blue: #5a8a9a;
+  --legacy-gold: #b89a5a;
+  --legacy-green: #6a9a7a;
+  --legacy-danger: #c46a7a;
+
+  /* 边线与圆角(命中:大圆角) */
+  --legacy-border: rgba(106, 90, 138, 0.14);
+  --legacy-border-2: rgba(106, 90, 138, 0.28);
+  --legacy-radius: 14px;
+  --legacy-radius-sm: 10px;
+  --legacy-radius-xs: 7px;
+
+  /* 字体(命中:JetBrains Mono 禁用) */
+  --legacy-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --legacy-serif: 'Fraunces', Georgia, serif;
+  --legacy-sans: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 禁用清单(anti-slop,机器可 grep,细则见 DESIGN.md §6):
+   backdrop-filter / blur( / 品牌面 linear-gradient(尤禁紫系
+   #6366f1 #8b5cf6 #a855f7 #8a6aaa) / #3b82f6 / glow / film-grain /
+   saturate( / 999px 胶囊 / Inter·Roboto·Arial 品牌字面 /
+   JetBrains Mono / Cormorant·Montserrat / Space Grotesk */
