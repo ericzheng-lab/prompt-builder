@@ -44,7 +44,7 @@ body{background-attachment:fixed;min-height:100vh;overflow-x:hidden}
 .step1{flex-direction:column;align-items:center;overflow-y:auto}
 .step1-title{font-size:28px;font-weight:300;letter-spacing:.02em;margin-bottom:8px;color:var(--os-ink)}
 .step1-subtitle,.step1-title{text-align:center}
-.cat-grid{width:100%;margin:0 auto}
+.cat-grid{width:100%;margin:0 auto;counter-reset:cat}
 .cat-card{border:1px solid var(--border);border-radius:0;cursor:pointer;transition:transform var(--pb-dur-base) var(--pb-ease);position:relative;overflow:hidden}
 .cat-card.llm-card{margin-bottom:10px;display:block}
 .cat-count{position:absolute;top:12px;right:14px;background:var(--os-surface);padding:2px 8px;border-radius:0}
@@ -316,7 +316,7 @@ body:has(#step1.active) .step1-title{font-family:var(--pb-font-display);font-siz
 .cat-card:hover{border-color:var(--os-ink);transform:translateY(-2px);background:var(--os-white)}
 .cat-card.llm-card{background:var(--os-surface);border-color:var(--os-line)}
 .cat-card.llm-card:hover,.preset-card:hover{border-color:var(--os-ink)}
-.cat-icon{font-size:28px;margin-bottom:10px}
+.cat-card{counter-increment:cat}.cat-icon{font-size:0;line-height:1;margin-bottom:10px}.cat-icon::before{content:counter(cat,decimal-leading-zero);font-size:22px;font-family:var(--pb-font-mono);font-weight:500;color:var(--os-accent);letter-spacing:.02em;line-height:1;display:inline-block}
 .cat-name{font-size:14px;font-weight:600;margin-bottom:2px}
 .cat-desc{font-size:13.5px;line-height:1.4}
 .cat-count,.cat-desc{color:var(--os-gray)}
