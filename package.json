@@ -18,6 +18,7 @@
     "tweaks-panel.jsx",
     "manifest.json",
     "sw.js",
+    "sw-register.js",
     "favicon.svg",
     "release-package/web-shots/landing-homepage.png",
     "release-package/web-shots/builder-direct-mode.png",
