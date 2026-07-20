@@ -97,6 +97,7 @@
 
 ## 5. 宣传物料 register — LOCKED
 
+- **语言条款(Eric 2026-07-19)**:landing 与对外物料页面文案 **English only,不得出现中文字符**(受众为国际招聘方/同行)。产品内的中英双语是功能卖点,功能描述可写 "English & Chinese",但页面文案本身零 CJK。机器判据:CJK 字符 grep = 0。
 - 物料清单:landing 刷新、发布封面/brand frames、HyperFrames 发布视频、X/LinkedIn 配图——全部使用 §4 One-Sheet 语言(海报音量)。
 - 素材铁律:真实产品截图出发(脱敏 demo 数据),永不伪造 UI;视频配音 GenerateAudio(TTS),配乐 Eric 自备;禁平台 Veo。
 - 消息层归 Marketer Brief;视觉执行归美指;发布过 Eric 审批门。
