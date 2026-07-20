@@ -30,7 +30,7 @@ Reason: two-stage, multi-file system reskin with more than three machine-verifia
 - [x] App color, surface, and typography shell matches One-Sheet tool volume.
 - [x] Entry/category view matches Screen 03 while preserving emoji icons.
 - [x] Main workbench and model/prompt surfaces match Screen 01.
-- [ ] Agent, settings, modal, and onboarding surfaces match Screen 02.
+- [x] Agent, settings, modal, and onboarding surfaces match Screen 02.
 - [ ] All forbidden legacy effects, radii, gradients, shadows, and fonts are removed.
 - [ ] Every Wave 2 loop passes the mock flow and size/lint checks.
 - [ ] Independent final audit is clean.
@@ -38,7 +38,8 @@ Reason: two-stage, multi-file system reskin with more than three machine-verifia
 
 ## Loop log
 
-- Loop 4: reskinned the main workbench, sidebar fields, chips, model tabs, formula, prompt preview, actions, history, and library to Screen 01 tool volume. Static check: 0 anti-slop P0, forbidden-effect grep 0, script SHA unchanged, app 342,647 bytes.
+- Loop 5: reskinned the Agent column, settings drawer, freeform modal, and onboarding to Screen 02 tool volume. Replaced overlay blur/scrim color with flat opacity 0.34 on the underlying view, made the drawer 420px with a solid paper surface and ink rule, and raised Agent/settings mono text to 14px. Static check: 0 anti-slop P0, forbidden-effect grep 0, script SHA unchanged, app 352,339 bytes.
+- Loop 4: reskinned the main workbench, sidebar fields, chips, model tabs, formula, prompt preview, actions, history, and library to Screen 01 tool volume. Static check: 0 anti-slop P0, forbidden-effect grep 0, script SHA unchanged, app 342,647 bytes. Browser mock flow on 65da446 passed: entry → Scene Concept → location → Fog chip → local generation → 108-character copy toast; screenshot confirmed square, three-column tool-volume layout and active model/chip blue hairlines.
 - Loop 3: replaced the global app shell and entry/category region with One-Sheet tool volume. Removed all 15 backdrop-filter declarations, three shadows, three gradients, and zeroed 59 CSS radii plus three generated status radii. Preserved Screen 03 emoji icons. Static check: 0 anti-slop P0, forbidden-effect grep 0, script behavior byte-identical except the three square status styles, app 334,657 bytes. Browser mock flow on 37f74e2 passed: entry → Scene Concept → location → Fog chip active → local generation → 108-character copy toast.
 - Loop 2: installed landing rev3; source remained byte-exact except the external sw-register.js tag. Bumped Service Worker cache to v5, removed HTML and legacy JSX from precache, made navigations network-first, and cache-busted registration. Stage 1 validator: 15/15 PASS; anti-slop 0; CJK 0; billing 1 at 12px minimum; seven assets present; inline business scripts limited to video and hook; index 51,402 bytes.
 - Loop 1: imported the locked One-Sheet contract and tokens; remote commit a01c1cf6b6bb1e0e50505e8ddf2283097857aa23.
