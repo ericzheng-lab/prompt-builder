@@ -62,7 +62,7 @@ body{background-attachment:fixed;min-height:100vh;overflow-x:hidden}
 .preset-card:hover{background:var(--os-line)}
 .preset-card .preset-desc{margin-top:3px}
 .preset-card .preset-models{display:flex;gap:3px;margin-top:6px}
-.preset-card .model-pip{font-size:9px;padding:1px 5px;border-radius:0;background:var(--os-surface);color:var(--dim);border:1px solid var(--border)}
+.preset-card .model-pip{font-size:11px;padding:1px 5px;border-radius:0;background:var(--os-surface);color:var(--dim);border:1px solid var(--border)}
 .preset-card .model-pip.compat{border-color:rgba(106,154,122,.3)}
 .question-flow{margin-top:16px;border-top:1px solid var(--border);padding-top:16px}
 .question-flow .q-item{margin-bottom:12px}
@@ -288,7 +288,7 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 .pb-onboarding-dot{border-radius:0}
 .pb-onboarding-btns{display:flex;gap:8px;align-items:center}
 .pb-onboarding-btn{padding:8px 12px;border-radius:0;border:1px solid var(--border,var(--os-line));background:var(--os-surface);cursor:pointer}
-.pb-onboarding-btn.primary{background:var(--os-accent)}
+.pb-onboarding-btn.primary{background:var(--os-ink)}
 .pb-onboarding-btn.ghost{background:0 0}
 body,html{background:var(--os-white);font-size:15px;line-height:1.5}
 body,button,html,input{color:var(--os-ink)}
@@ -676,7 +676,7 @@ body:has(.settings-panel.open) .header h1{font-family:var(--pb-font-display);fon
 
     <!-- Preview -->
     <div style="position:relative">
-      <label class="field-label" style="margin-bottom:8px">Prompt Preview <span style="font-size:10px;color:var(--dim);text-transform:none;font-weight:400;margin-left:8px">— editable, copy or export when ready</span></label>
+      <label class="field-label" style="margin-bottom:8px">Prompt Preview <span style="font-size:11px;color:var(--dim);text-transform:none;font-weight:400;margin-left:8px">— editable, copy or export when ready</span></label>
       <textarea class="preview-editor" id="previewEditor" placeholder="Start filling in the fields to build your prompt..."></textarea>
       <div class="regenerating" id="regenIndicator">Generating...</div>
     </div>
@@ -699,7 +699,7 @@ body:has(.settings-panel.open) .header h1{font-family:var(--pb-font-display);fon
 
     <!-- Library — explicit favorites (pb-library) -->
     <div class="library-wrap" id="libraryWrap">
-      <label class="field-label" style="margin-bottom:10px">Library <span id="pb-library-badge" style="font-size:10px;font-weight:600;margin-left:8px;padding:2px 8px;border-radius:0;background:var(--os-line);color:var(--blue)"></span> <span style="font-size:10px;color:var(--dim);text-transform:none;font-weight:400;margin-left:6px">★ saved prompts · separate from Recent</span></label>
+      <label class="field-label" style="margin-bottom:10px">Library <span id="pb-library-badge" style="font-size:11px;font-weight:600;margin-left:8px;padding:2px 8px;border-radius:0;background:var(--os-line);color:var(--blue)"></span> <span style="font-size:11px;color:var(--dim);text-transform:none;font-weight:400;margin-left:6px">★ saved prompts · separate from Recent</span></label>
       <div class="library-toolbar">
         <input type="search" id="librarySearch" placeholder="Search prompts…" oninput="renderLibrary()" />
         <input type="text" id="libraryTagInput" placeholder="tag filter (optional)" oninput="renderLibrary()" style="max-width:140px" />
@@ -737,7 +737,7 @@ body:has(.settings-panel.open) .header h1{font-family:var(--pb-font-display);fon
             <button type="button" data-agent-starter="character sheet for a weary 40-year-old detective, photoreal cinematic, full turnaround">Detective character sheet<span>character · consistency</span></button>
             <button type="button" data-agent-starter="theatrical one-sheet film poster, lone astronaut silhouette, deep space, bold title space">Sci-fi one-sheet poster<span>poster · key art</span></button>
           </div>
-          <div class="agent-welcome-hint" id="agentWelcomeHint">Tip: set your model in the dropdown below. Click <strong id="byokTopStatus">Try without key</strong> above or add <code style="font-size:10px">?mock=1</code> to URL for no-key demo, or open <strong>⚙ BYOK</strong> to add your key.</div>
+          <div class="agent-welcome-hint" id="agentWelcomeHint">Tip: set your model in the dropdown below. Click <strong id="byokTopStatus">Try without key</strong> above or add <code style="font-size:11px">?mock=1</code> to URL for no-key demo, or open <strong>⚙ BYOK</strong> to add your key.</div>
         </div>
       </div>
     </div>
@@ -1147,7 +1147,7 @@ const cat=FILM_CATEGORIES.find((c=>c.id===catId));if(!cat)return;const presets=F
 const isCustom=i>=presets.length,models=p.compatibleModels||["midjourney","flux","nano","gptimage"],actions=isCustom?`<div class="preset-actions" style="margin-top:6px;display:flex;gap:6px"><button class="btn" style="font-size:11px;padding:3px 8px" onclick="event.stopPropagation();editCustomPreset('${escAttr(p.id)}')">Edit</button><button class="btn" style="font-size:11px;padding:3px 8px;color:var(--danger)" onclick="event.stopPropagation();deleteCustomPreset('${escAttr(p.id)}')">Delete</button></div>`:""
 ;return isCustom?`<div class="preset-card" onclick="openLLMPreset('${escAttr(p.id)}')"><div class="preset-name">${escHtml(p.name)}</div><div class="preset-desc">${escHtml(p.desc||"")}</div>${actions}</div>`:`<div class="preset-card" onclick="selectFilmPreset(${i},'${escAttr(catId)}')"><div class="preset-name">${escHtml(p.name)}</div><div class="preset-desc">${escHtml(p.desc)}</div><div class="preset-models">${models.map((m=>`<span class="model-pip compat">${escHtml(m)}</span>`)).join("")}</div></div>`
 })).join(""),document.getElementById("presetPickerOverlay").classList.add("open")}function selectFilmPreset(idx,catId){const preset=FILM_PRESETS.filter((p=>p.category===catId))[idx];preset&&(closePresetPicker(),applyFilmPreset(preset),goToStep(2),setBreadcrumb(preset.name,"Film & TV"),addEnhanceButtonForPreset(preset))}function addEnhanceButtonForPreset(preset){const actions=document.querySelector("#step2 .actions");if(!actions)return;const existing=document.getElementById("presetEnhanceBtn")
-;existing&&existing.remove();const btn=document.createElement("button");btn.id="presetEnhanceBtn",btn.className="btn btn-enhance",btn.style.cssText="font-weight:700",btn.innerHTML="✦ AI Rewrite <span style='font-size:10px;opacity:0.7;margin-left:4px'>(用自然语言描述)</span>",btn.title="此分类支持 AI 自由描述生成：跳过标签选择，直接描述你想要的画面",btn.onclick=()=>{document.getElementById("enhanceInput").value=preset.data.subject||"",openEnhanceModal()},actions.prepend(btn)}function applyFilmPreset(preset){currentLLMPreset=null,
+;existing&&existing.remove();const btn=document.createElement("button");btn.id="presetEnhanceBtn",btn.className="btn btn-enhance",btn.style.cssText="font-weight:700",btn.innerHTML="✦ AI Rewrite <span style='font-size:11px;opacity:0.7;margin-left:4px'>(用自然语言描述)</span>",btn.title="此分类支持 AI 自由描述生成：跳过标签选择，直接描述你想要的画面",btn.onclick=()=>{document.getElementById("enhanceInput").value=preset.data.subject||"",openEnhanceModal()},actions.prepend(btn)}function applyFilmPreset(preset){currentLLMPreset=null,
 llmFieldValues={},assemblyMode="standard";const d=preset.data;clearAll(),preset.model&&preset.model!==currentModel&&(currentModel=preset.model),document.getElementById("subject").value=d.subject||"",(d.style||[]).forEach((s=>selectedStyles.add(s))),(d.color||[]).forEach((s=>selectedColor.add(s))),(d.detail||[]).forEach((s=>selectedDetail.add(s)));const lightingMap={"neon glow":"Neon/LED Color","volumetric light":"God Rays / volumetric","dramatic lighting":"Low-Key","rim light":"Three-Point Key",
 "natural light":"Motivated Natural","golden hour":"Golden Hour","blue hour":"Blue Hour","studio softbox":"High-Key",backlit:"Silhouette",chiaroscuro:"Chiaroscuro",candlelight:"Firelight",moonlight:"Moonlight",spotlight:"Three-Point Key",diffused:"Motivated Natural"};(d.lighting||[]).forEach((s=>{const film=lightingMap[s];film&&FILM_LIGHTING_SETUP.includes(film)?selectedFilmLighting.add(film):selectedLighting.add(s)}));const moodMap={tense:"Tense",eerie:"Eerie",melancholic:"Melancholic",
 serene:"Serene",mysterious:"Mysterious",epic:"Triumphant",dark:"Gritty",ethereal:"Dreamlike",nostalgic:"Nostalgic",futuristic:"Euphoric",isolated:"Desolate",whimsical:"Whimsical"};(d.mood||[]).forEach((s=>{const film=moodMap[s];film&&FILM_MOOD_FILM.includes(film)?selectedFilmMood.add(film):selectedMood.add(s)})),renderChips("styleChips",STYLES,selectedStyles),renderChips("colorChips",COLORS,selectedColor),renderChips("detailChips",DETAILS,selectedDetail),"film"===currentMode&&renderFilmChips(),
@@ -1357,7 +1357,7 @@ if(err&&(400===err.status||422===err.status||/response_format|json_schema|unreco
 ;async function once(useSchema){const body={model:modelName||"claude-sonnet-5",max_tokens:maxTokens,system:systemPrompt,messages:messages};let res;useSchema&&(body.output_config={format:{type:"json_schema",schema:options.jsonSchema}});try{res=await fetch(url,{method:"POST",headers:headers,body:JSON.stringify(body),signal:signal})}catch(netErr){throw netErr.status=0,netErr}if(!res.ok){const errBody=await res.json().catch((()=>({}))),e=new Error(errBody.error?.message||`API error ${res.status}`)
 ;throw e.status=res.status,e.body=errBody,e}const data=await res.json(),block=(data.content||[]).find((c=>"text"===c.type))||data.content?.[0];return block&&null!=block.text?block.text:""}if(options.jsonSchema)try{return await once(!0)}catch(err){if(err&&(400===err.status||422===err.status||/output_config|json_schema|unrecognized|unsupported|invalid/i.test(String(err.message||""))))return await once(!1);throw err}return await once(!1)}function isMockMode(){try{
 return"1"===new URLSearchParams(location.search).get("mock")}catch{return!1}}function applyMockBanner(){const el=document.getElementById("agentMockBanner");if(!el)return;const on=isMockMode();el.dataset.on=on?"1":"0",el.setAttribute("aria-hidden",on?"false":"true");const hint=document.getElementById("agentWelcomeHint")
-;hint&&(hint.innerHTML=on?"Demo mode is on — starters and replies work with <strong>no API key</strong>.":'Tip: set your model in the dropdown below. Add <code style="font-size:10px">?mock=1</code> to the URL to demo without an API key.');const byok=document.getElementById("byokStatus");byok&&on&&(byok.innerHTML='<span class="byok-dot ok"></span>Demo',byok.style.color="var(--blue)",byok.title="Mock mode — no API key required")}function bindAgentWelcomeStarters(){
+;hint&&(hint.innerHTML=on?"Demo mode is on — starters and replies work with <strong>no API key</strong>.":'Tip: set your model in the dropdown below. Add <code style="font-size:11px">?mock=1</code> to the URL to demo without an API key.');const byok=document.getElementById("byokStatus");byok&&on&&(byok.innerHTML='<span class="byok-dot ok"></span>Demo',byok.style.color="var(--blue)",byok.title="Mock mode — no API key required")}function bindAgentWelcomeStarters(){
 const root=document.getElementById("agentWelcomeStarters");root&&"1"!==root.dataset.bound&&(root.dataset.bound="1",root.addEventListener("click",(function(ev){const btn=ev.target&&ev.target.closest&&ev.target.closest("[data-agent-starter]");if(!btn)return;ev.preventDefault();const text=btn.getAttribute("data-agent-starter")||"";text&&pickAgentQuickReply(text)})))}function mockAgentResponse(userMessage,targetModel){
 const msg=(userMessage||"").trim(),low=msg.toLowerCase(),isEmpty=!msg,isVague=msg.length>0&&msg.length<8&&!/(shot|scene|film|cinematic|portrait|landscape|character|env|poster)/i.test(msg);if(isEmpty||isVague&&/^(hi|hello|hey|帮|你好|test)$/i.test(msg))return{preset_id:null,chip_selections:{},prompt:"",rationale:"",clarifying_question:"Who or what is the main subject of this image?",quick_replies:["lone rider at dusk","film producer in edit bay","neon city alley"]}
 ;const isRefine=/shorter|more|less|cinematic|detail|改|更|短|tighter|atmosphere/.test(low),promptByModel={midjourney:"/imagine lone film producer at golden-hour edit bay, medium shot, 35mm anamorphic, warm practicals, cinematic still --ar 16:9 --s 200 --raw",flux:"A photorealistic medium shot of a film producer reviewing dailies at golden hour, 35mm anamorphic lens, warm practical lamps, shallow depth of field, subtle film grain",

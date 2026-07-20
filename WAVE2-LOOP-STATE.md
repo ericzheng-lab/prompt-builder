@@ -38,6 +38,7 @@ Reason: two-stage, multi-file system reskin with more than three machine-verifia
 
 ## Loop log
 
+- Loop 7: closed the merged art-direction and source-audit fix list without widening scope. Changed the onboarding primary button from Klein-blue fill to ink fill; raised every remaining 9px/10px functional label to 11px while preserving the 14px mono/prompt floor; retained emojis and all permitted blue dots. Full six-part validator: accent backgrounds 2 and both allowlisted dots, forbidden transitions 0, long animations 0, mono minimum 14px with enhanced output 14px, 9px/10px declarations 0, app 311,222 bytes plus 47,508 font bytes = 358,730 bytes total.
 - Loop 6: repaired milestone REJECT findings without touching behavior: removed the Settings color transition, converted the typing indicator to three static dots, raised every explicit Sometype Mono use to at least 14px, and applied font-budget option B with role-specific Google Fonts text subsets shared by landing and app. Minified inline CSS/JS reduced prompt-builder.html from 352,339 to 311,224 bytes; measured font CSS plus unique WOFF2 payload is 47,508 bytes, for a 358,732-byte loaded total. Static checks: forbidden property transitions 0; long animations 0; mono floor validator PASS.
 - Loop 5: reskinned the Agent column, settings drawer, freeform modal, and onboarding to Screen 02 tool volume. Replaced overlay blur/scrim color with flat opacity 0.34 on the underlying view, made the drawer 420px with a solid paper surface and ink rule, and raised Agent/settings mono text to 14px. Static check: 0 anti-slop P0, forbidden-effect grep 0, script SHA unchanged, app 352,339 bytes.
 - Loop 4: reskinned the main workbench, sidebar fields, chips, model tabs, formula, prompt preview, actions, history, and library to Screen 01 tool volume. Static check: 0 anti-slop P0, forbidden-effect grep 0, script SHA unchanged, app 342,647 bytes. Browser mock flow on 65da446 passed: entry → Scene Concept → location → Fog chip → local generation → 108-character copy toast; screenshot confirmed square, three-column tool-volume layout and active model/chip blue hairlines.
@@ -47,6 +48,6 @@ Reason: two-stage, multi-file system reskin with more than three machine-verifia
 
 ## Audit
 
-Status: NEEDS FIX.
+Status: READY FOR RE-AUDIT.
 
-The milestone source audit rejected the prior head with three LOCKED violations: a color transition, a 1.2-second typing animation, and sub-14px mono labels. Loop 6 repairs all three and leaves independent re-audit pending; no release authorization is implied.
+Loops 6–7 repair the full merged art-direction and source-audit list. Independent machine re-audit remains pending; this status is not merge or deployment authorization.
