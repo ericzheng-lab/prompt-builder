@@ -15,7 +15,7 @@ assert(html.includes('Brushed aluminum'), 'chip r2 materials');
 assert(html.includes('Crash zoom') || html.includes('Rack focus'), 'chip r2 camera');
 assert(html.includes('function getLibrary()'), 'getLibrary kept');
 assert(html.includes('pb-library'), 'pb-library key');
-assert(!/v8\.2/i.test(html), 'no V8.2');
+assert(!/version:"V7"/.test(html), 'no V7 model card');
 const size = Buffer.byteLength(html, 'utf8');
 assert(size < 320 * 1024, 'size ' + size);
 

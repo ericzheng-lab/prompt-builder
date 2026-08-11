@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node ./bin/prompt-builder.js open",
-    "serve": "node ./bin/prompt-builder.js serve"
+    "serve": "node ./bin/prompt-builder.js serve",
+    "test": "node bin/run-tests.js"
   },
   "files": [
     "bin",
