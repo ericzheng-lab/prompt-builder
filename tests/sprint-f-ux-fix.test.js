@@ -7,10 +7,10 @@ assert(html.includes('pb-sprint-f'), 'marker');
 assert(html.includes('data-agent-qr'), 'data-agent-qr');
 assert(html.includes('bindAgentMessageClicks'), 'delegation');
 assert(!html.includes('onclick="pickAgentQuickReply(${JSON.stringify'), 'no broken onclick stringify');
-assert(html.includes('version:"V7"'), 'MJ V7');
+assert(html.includes('version:"V8.2"'), 'MJ V8.2');
 assert(!/V8\.1/.test(html), 'no V8.1');
 assert(html.includes('function escAttr'), 'escAttr');
-assert(html.includes('Midjourney V7'), 'V7 label');
+assert(html.includes('Midjourney V8.2'), 'V8.2 label');
 
 const landing = fs.readFileSync(path.join(__dirname, '..', 'landing-bundle.jsx'), 'utf8');
 assert(landing.includes('/prompt-builder/prompt-builder'), 'landing absolute app href');

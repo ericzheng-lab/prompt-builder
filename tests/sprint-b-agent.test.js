@@ -78,8 +78,8 @@ try {
 assert(threw, 'malformed must throw');
 
 assert(html.includes('const MODEL_CARDS={'), 'MODEL_CARDS');
-assert(html.includes('version:"V8.1"'), 'V8.1');
-assert(!/v8\.2/i.test(html), 'no V8.2');
+assert(html.includes('version:"V8.2"'), 'MJ card pinned to V8.2');
+assert(!/version:"V7"/.test(html), 'no V7 model card');
 assert(html.includes('AGENT_JSON_SCHEMA'), 'schema');
 assert(html.includes('output_config'), 'anthropic structured');
 assert(html.includes('response_format'), 'openai structured');

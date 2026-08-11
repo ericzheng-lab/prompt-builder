@@ -10,7 +10,7 @@ assert(html.includes('characters ≤5') || html.includes('characters'), 'nano re
 assert(html.includes('Haunted'), 'chip enrich');
 assert(html.includes('Matte-painting plate'), 'env chip');
 assert(html.includes('One-sheet hierarchy'), 'poster chip');
-assert(!/v8\.2/i.test(html), 'no V8.2');
+assert(!/version:"V7"/.test(html), 'no V7 model card');
 const mc = html.slice(html.indexOf('const MODEL_CARDS={'), html.indexOf('function buildModelRules'));
 assert(!/seedance|kling video|veo 3\.1/i.test(mc), 'no video in MODEL_CARDS');
 const size = Buffer.byteLength(html, 'utf8');

@@ -58,13 +58,13 @@ for (const m of models) {
   assert(rules.includes('STRUCTURE'), `${m} STRUCTURE section`);
 }
 
-assert(MODEL_CARDS.midjourney.version === 'V7', 'MJ must be V8.1');
+assert(MODEL_CARDS.midjourney.version === 'V8.2', 'MJ must be V8.2 (official default since 2026-07-24)');
 assert(MODEL_CARDS.flux.version === 'FLUX.2', 'Flux must be FLUX.2');
 assert(MODEL_CARDS.gptimage.version === 'gpt-image-2', 'gptimage version');
 assert(MODEL_CARDS.nano.version === 'gemini-3-pro-image', 'nano version');
 
 // Full-file red line
-assert(!/v8\.2/i.test(html), 'V8.2 must not appear anywhere in prompt-builder.html');
+assert(/version:"V8\.2"/.test(html), 'V8.2 must be the pinned Midjourney version');
 assert(!html.includes('LLM_SYSTEM_PROMPTS'), 'LLM_SYSTEM_PROMPTS must be gone');
 assert(html.includes('isMockMode'), 'mock mode helper required');
 assert(html.includes('_agentAbort'), 'abort isolation agent');
